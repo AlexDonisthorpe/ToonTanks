@@ -23,5 +23,24 @@ APawnBase::APawnBase()
 
 }
 
+void APawnBase::RotateTurret(FVector LookAtTarget)
+{
+	// Update turret to face towards the lookAtTarget
+}
+
+void APawnBase::Fire()
+{
+	// Get the projectile spawn point location/rotation
+		// instantiate projectile
+}
+
+void APawnBase::HandleDestruction()
+{
+	// Play death VFX/SFX & camera shake
+
+	// Overridden for child stuff~
+	
+}
+
 
 
