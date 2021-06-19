@@ -27,7 +27,7 @@ class TOONTANKS_API APawnBase : public APawn
 
 	protected:
 
-	void RotateTurret(FVector LookAtTarget);
+	void RotateTurret(FVector LookAtTarget) const;
 	void Fire();
 	virtual void HandleDestruction();
 	
