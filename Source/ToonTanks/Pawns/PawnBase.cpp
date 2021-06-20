@@ -40,6 +40,7 @@ void APawnBase::Fire()
 		
 		AProjectileBase* TempProjectile = GetWorld()->SpawnActor<AProjectileBase>(ProjectileClass, SpawnLocation, SpawnRotation);
 		TempProjectile->SetOwner(this);
+		TempProjectile->IgnoreOwner();
 	}
 
 }

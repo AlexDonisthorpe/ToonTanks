@@ -12,6 +12,7 @@ void ATankGameModeBase::BeginPlay()
 
 void ATankGameModeBase::ActorDied(AActor* DeadActor)
 {
+	UE_LOG(LogTemp, Warning, TEXT("A Pawn Died"));
 	// Check type of actor killed
 		// if enemy, points ++
 		// if player, game over
