@@ -28,6 +28,9 @@ class TOONTANKS_API ATankGameModeBase : public AGameModeBase
 	
 	protected:
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Game Loop")
+	int32 CountdownTimer = 4;
+	
 	virtual void BeginPlay() override;
 	
 	UFUNCTION(BlueprintImplementableEvent)

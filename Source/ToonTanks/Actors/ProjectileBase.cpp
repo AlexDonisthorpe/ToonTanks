@@ -29,7 +29,6 @@ void AProjectileBase::BeginPlay()
 
 void AProjectileBase::IgnoreOwner() const
 {
-	UE_LOG(LogTemp, Warning, TEXT("Ignoring Owner"));
 	ProjectileMesh->IgnoreActorWhenMoving(GetOwner(), true);
 }
 

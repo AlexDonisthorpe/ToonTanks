@@ -46,6 +46,8 @@ void APawnTank::HandleDestruction()
 {
 	Super::HandleDestruction();
 	// TODO hide player
+
+	UE_LOG(LogTemp, Warning, TEXT("PlayerDed"));
 }
 
 // Called every frame
