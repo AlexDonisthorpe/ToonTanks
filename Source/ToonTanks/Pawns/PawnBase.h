@@ -9,6 +9,7 @@
 class UCapsuleComponent;
 class AProjectileBase;
 class HealthComponent;
+class MatineeCameraShake;
 
 UCLASS()
 class TOONTANKS_API APawnBase : public APawn
@@ -17,7 +18,7 @@ class TOONTANKS_API APawnBase : public APawn
 
 	private:
 	// Components
-	UPROPERTY(VisibleAnywhere, BluePrintReadWrite, Category="Components", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UCapsuleComponent* CapsuleComp;
 	UPROPERTY(VisibleAnywhere, BluePrintReadWrite, Category="Components", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* BaseMesh;
@@ -31,9 +32,14 @@ class TOONTANKS_API APawnBase : public APawn
 	// Variables
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Projectile Type", meta = (AllowPrivateAccess = "true"))
 	TSubclassOf<AProjectileBase> ProjectileClass;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Effects", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<UMatineeCameraShake> DeathShake;
+	
 
 	UPROPERTY(EditAnywhere, Category = "Effects")
 	UParticleSystem* DeathParticle;
+	UPROPERTY(EditAnywhere, Category = "Effects")
+	USoundBase* DeathSound;
 	
 	public:
 	APawnBase();

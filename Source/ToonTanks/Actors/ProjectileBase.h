@@ -7,6 +7,7 @@
 #include "ProjectileBase.generated.h"
 
 class UProjectileMovementComponent;
+class MatineeCameraShake;
 UCLASS()
 class TOONTANKS_API AProjectileBase : public AActor
 {
@@ -30,6 +31,13 @@ private:
 	float MovementSpeed = 1300;
 	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Effects", meta = (AllowPrivateAccess = "true"))
 	UParticleSystem* HitParticle;
+
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Effects", meta = (AllowPrivateAccess = "true"))
+	USoundBase* HitSound;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Effects", meta = (AllowPrivateAccess = "true"))
+	USoundBase* LaunchSound;
+	UPROPERTY(EditAnywhere, BluePrintReadWrite, Category="Effects", meta = (AllowPrivateAccess = "true"))
+	TSubclassOf<UMatineeCameraShake> HitShake;
 
 	// Functions
 	UFUNCTION()

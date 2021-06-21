@@ -53,8 +53,8 @@ void APawnBase::HandleDestruction()
 {
 	// Play VFX
 	UGameplayStatics::SpawnEmitterAtLocation(this, DeathParticle, GetActorLocation());
-	
-	// Overridden for child stuff~
+	UGameplayStatics::PlaySoundAtLocation(this, DeathSound, GetActorLocation());
+	GetWorld()->GetFirstPlayerController()->ClientStartCameraShake(DeathShake);
 	
 }
 
