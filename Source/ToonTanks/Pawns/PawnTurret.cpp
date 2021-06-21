@@ -23,7 +23,7 @@ void APawnTurret::HandleDestruction()
 
 void APawnTurret::CheckFireCondition()
 {
-    if(!PlayerPawn || DistanceToPlayer() > FireRange) return;
+    if(!PlayerPawn || !PlayerPawn->IsPlayerAlive() || DistanceToPlayer() > FireRange) return;
 
 	Fire();
 }

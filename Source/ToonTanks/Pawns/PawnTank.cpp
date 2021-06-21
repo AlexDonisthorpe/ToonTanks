@@ -45,9 +45,15 @@ void APawnTank::BeginPlay()
 void APawnTank::HandleDestruction()
 {
 	Super::HandleDestruction();
-	// TODO hide player
+	bIsPlayerAlive = false;
 
-	UE_LOG(LogTemp, Warning, TEXT("PlayerDed"));
+	SetActorHiddenInGame(true);
+	SetActorTickEnabled(false);
+}
+
+bool APawnTank::IsPlayerAlive() const
+{
+	return bIsPlayerAlive;
 }
 
 // Called every frame

@@ -31,7 +31,8 @@ class TOONTANKS_API APawnTank : public APawnBase
 	FQuat RotationDirection;
 
 	APlayerController* PlayerControllerRef;
-
+	bool bIsPlayerAlive = true;
+	
 	void CalculateMoveInput(float Value);
 	void CalculateRotateInput(float Value);
 
@@ -49,6 +50,8 @@ class TOONTANKS_API APawnTank : public APawnBase
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	virtual void HandleDestruction() override;
+
+	bool IsPlayerAlive() const;
 	
 	protected:
 	// Called when the game starts or when spawned
