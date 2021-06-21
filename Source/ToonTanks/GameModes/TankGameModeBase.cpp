@@ -31,6 +31,7 @@ void ATankGameModeBase::ActorDied(AActor* DeadActor)
 		
 		if(--TargetTurrets == 0)
 		{
+			PlayerTank->SetActorTickEnabled(false);
 			HandleGameOver(true);
 
 			if(PlayerController)
